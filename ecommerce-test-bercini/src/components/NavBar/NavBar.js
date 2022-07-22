@@ -1,4 +1,5 @@
-// Upper CamelCase
+
+import CartWidget from "./CartWidget/CartWidget"
 
 const NavBar = () => {
     return(
@@ -21,6 +22,8 @@ const NavBar = () => {
           <a class="nav-link" href="#">Contacto</a>
         </li>
       </ul>
+
+      <CartWidget />
 
     </div>
   </div>

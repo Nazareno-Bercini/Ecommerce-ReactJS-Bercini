@@ -1,6 +1,9 @@
 {
   "dependencies": {
+    "@mui/icons-material": "^5.8.4",
     "bootstrap": "^5.2.0",
+    "bootstrap-icons": "^1.9.1",
+    "font-awesome": "^4.7.0",
     "sass": "^1.53.0"
   }
 }
