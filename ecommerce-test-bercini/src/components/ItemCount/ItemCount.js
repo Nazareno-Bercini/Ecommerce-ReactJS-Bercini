@@ -2,12 +2,12 @@ import { useState } from "react"
 
 const ItemCount=({stock}) => {
 
-    let stock1 = stock
+    
     const [contador, setContador] = useState(1)
     
 
     const addNumber = () => {
-        if (stock1 > contador)
+        if (contador < stock)
         setContador(contador + 1)
     }
 

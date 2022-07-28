@@ -1,11 +1,12 @@
+
 import ItemProduct from "./ItemProduct"
-const ItemListContainer = (section) => {
+const ItemListContainer = () => {
 
   const product1 = {
     title: 'Camiseta Titular',
     price: 7000,
     image: 'camiseta1.jpg',
-    stock : 7
+    stock : 9
 
   }
 
@@ -17,9 +18,9 @@ const ItemListContainer = (section) => {
   }
     return (
         <div className='list-products'>
-          <h2>{section}</h2>
-        <ItemProduct data={product1}/>
-        <ItemProduct data={product2} />
+          <h2>Camisetas</h2>
+          <ItemProduct data={product1}/>
+          <ItemProduct data={product2}/>
       </div>
 
     )
