@@ -7,7 +7,7 @@ const ItemCount=({stock}) => {
     
 
     const addNumber = () => {
-        if (contador < stock)
+        if (stock > contador)
         setContador(contador + 1)
     }
 
@@ -19,9 +19,9 @@ const ItemCount=({stock}) => {
 
     return (
         <div className="countProd">
-                <button onClick={{restNumber}}>-</button>
+                <button onClick={restNumber}>-</button>
                 <p>{contador}</p>
-                <button onClick={{addNumber}}>+</button>
+                <button onClick={addNumber}>+</button>
 
             </div>
     )
