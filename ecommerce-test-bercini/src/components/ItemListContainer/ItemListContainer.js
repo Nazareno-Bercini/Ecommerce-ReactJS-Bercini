@@ -1,32 +1,33 @@
 import { useState, useEffect } from "react"
 import ItemList from "../ItemList/ItemList"
 import products from "../../products.mock"
+import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer"
 const ItemListContainer = () => {
 
-  const [listProducts, setListProducts] = useState([])
+  // const [listProducts, setListProducts] = useState([])
 
-  const getProducts = () => new Promise ( (resolve, reject) => {
-    setTimeout(() => {
-      resolve(products)
-    }, 2000)
-  })
+  // const getProducts = () => new Promise ( (resolve, reject) => {
+  //   setTimeout(() => {
+  //     resolve(products)
+  //   }, 2000)
+  // })
 
-  useEffect(() => {
-      const getProduct = async () => {
-        try {
-          const res = await getProducts()
-          setListProducts(res)
-        }
+  // useEffect(() => {
+  //     const getProduct = async () => {
+  //       try {
+  //         const res = await getProducts()
+  //         setListProducts(res)
+  //       }
 
-        catch(erorr){
+  //       catch(erorr){
           
-        }
-      }
+  //       }
+  //     }
 
-      getProduct()
+  //     getProduct()
 
-      }, []
-  )
+  //     }, []
+  // )
   
 
 
@@ -34,7 +35,9 @@ const ItemListContainer = () => {
     return (
         <div className='list-products'>
           <h2>Camisetas</h2>
-          <ItemList dataProducts={listProducts}/>
+          {/* <ItemList dataProducts={listProducts}/> */}
+          <ItemDetailContainer />
+
       </div>
 
     )
