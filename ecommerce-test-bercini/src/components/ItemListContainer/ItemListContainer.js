@@ -1,33 +1,43 @@
+
 import { useState, useEffect } from "react"
 import ItemList from "../ItemList/ItemList"
 import products from "../../products.mock"
 import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer"
-const ItemListContainer = () => {
+import { useParams } from "react-router-dom"
 
-  // const [listProducts, setListProducts] = useState([])
+const ItemListContainer = ({categoryParam}) => {
 
-  // const getProducts = () => new Promise ( (resolve, reject) => {
-  //   setTimeout(() => {
-  //     resolve(products)
-  //   }, 2000)
-  // })
+  const { category } = useParams()
+  const filterCategory = products.filter((prod) => prod.categoryId === category)
+  
+  const [listProducts, setListProducts] = useState([])
 
-  // useEffect(() => {
-  //     const getProduct = async () => {
-  //       try {
-  //         const res = await getProducts()
-  //         setListProducts(res)
-  //       }
+  const getProducts = () => new Promise ( (resolve, reject) => {
+    setTimeout(() => {
+      if (categoryParam === "") {
+        resolve(products)
+    } else {
+        resolve(filterCategory)
+    }
+  }, 2000)
+  })
 
-  //       catch(erorr){
+  useEffect(() => {
+      const getProduct = async () => {
+        try {
+          const res = await getProducts()
+          setListProducts(res)
+        }
+
+        catch(erorr){
           
-  //       }
-  //     }
+        }
+      }
 
-  //     getProduct()
+      getProduct()
 
-  //     }, []
-  // )
+      }, []
+  )
   
 
 
@@ -35,8 +45,8 @@ const ItemListContainer = () => {
     return (
         <div className='list-products'>
           <h2>Camisetas</h2>
-          {/* <ItemList dataProducts={listProducts}/> */}
-          <ItemDetailContainer />
+          <ItemList dataProducts={listProducts}/>
+          {/* <ItemDetailContainer /> */}
 
       </div>
 
