@@ -1,9 +1,9 @@
-
+import { Link } from "react-router-dom"
 
 const CartWidget = () => {
     return (
         <div className='cart-widget'>
-            <i className="bi bi-cart3"></i>
+            <Link to='/cart'><i className="bi bi-cart3"></i></Link>
         </div>
     )
 }

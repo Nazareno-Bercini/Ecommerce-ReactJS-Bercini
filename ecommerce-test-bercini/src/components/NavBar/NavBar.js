@@ -17,7 +17,10 @@ const NavBar = () => {
           <Link className="nav-link active" aria-current="page" to="/">Inicio</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/productos">Primera Division</Link>
+          <Link className="nav-link" to="/category/primera_division">Primera Division</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/category/internacional">Internacionales</Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link" to="/contacto">Contacto</Link>

@@ -5,19 +5,22 @@ import products from "../../products.mock"
 import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer"
 import { useParams } from "react-router-dom"
 
-const ItemListContainer = ({categoryParam}) => {
+const ItemListContainer = ({section}) => {
 
   const { category } = useParams()
-  const filterCategory = products.filter((prod) => prod.categoryId === category)
-  
   const [listProducts, setListProducts] = useState([])
+  const filterByCategory = products.filter(
+    (products) =>
+     products.category === (category == 'primera_division' && 'primera_division') || products.category === (category == 'internacional' && 'internacional')  
+     )
+  
 
   const getProducts = () => new Promise ( (resolve, reject) => {
     setTimeout(() => {
-      if (categoryParam === "") {
-        resolve(products)
+      if (category) {
+        resolve(filterByCategory)
     } else {
-        resolve(filterCategory)
+        resolve(products)
     }
   }, 2000)
   })
@@ -44,7 +47,7 @@ const ItemListContainer = ({categoryParam}) => {
   
     return (
         <div className='list-products'>
-          <h2>Camisetas</h2>
+          <h2>{section}</h2>
           <ItemList dataProducts={listProducts}/>
           {/* <ItemDetailContainer /> */}
 

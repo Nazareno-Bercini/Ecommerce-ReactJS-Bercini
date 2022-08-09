@@ -4,7 +4,7 @@ const products = [
         id: 1,
         title: 'Camiseta Titular EDLP',
         price: 7000,
-        category: 'primera division',
+        category: 'primera_division',
         image: 'camiseta1.jpg',
         stock : 9
         
@@ -15,7 +15,7 @@ const products = [
         title: 'Camiseta Suplente EDLP',
         price: 7700,
         image: 'camiseta2.jpg',
-        category: 'primera division',
+        category: 'primera_division',
         stock : 7
 },
     {
@@ -23,7 +23,7 @@ const products = [
         title: 'Camiseta Titular CARP',
         price: 7500,
         image: 'camiseta.river1.jpg',
-        category: 'primera division',
+        category: 'primera_division',
         stock : 7
     },
     {
@@ -31,7 +31,7 @@ const products = [
         title: 'Camiseta Suplente CARP',
         price: 7300,
         image: 'camiseta.river2.jpg',
-        category: 'primera division',
+        category: 'primera_division',
         stock : 7
     },
     {
@@ -39,7 +39,7 @@ const products = [
         title: 'Camiseta Titual Talleres',
         price: 7700,
         image: 'camiseta.talleres1.jpg',
-        category: 'primera division',
+        category: 'primera_division',
         stock : 7
     },
     {
@@ -54,7 +54,7 @@ const products = [
         title: 'Camiseta Suplente Argentina',
         price: 7700,
         image: 'camiseta.arg2.jpg',
-        category: 'intrenacional',
+        category: 'internacional',
         stock : 7
     },
     {
