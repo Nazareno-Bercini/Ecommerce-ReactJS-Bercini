@@ -1,4 +1,4 @@
-Bercini camistas
+Bercini camisetas
 
 Tienda de camisetas donde se venden camisetas del futbol argentino. 
 Tambien se venden camisetas internacionales de las selecciones del mundo.
