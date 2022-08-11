@@ -1,11 +1,16 @@
+import { useState, useEffect, useContext } from 'react';
 import './ItemProduct.css';
 import ItemCount from "../ItemCount/ItemCount"
 import { Link } from "react-router-dom"
+import { CartContext } from '../../context/CartContext';
 
 const ItemProduct = ({data, action}) => {
-
+    const {handleClick} = useContext(CartContext)
+    
     const {title, image, price, stock, id} = data
+    
   
+
     return (
         <Link to={`/productos/${id}`}>
             <div className='item-product'>
@@ -16,7 +21,7 @@ const ItemProduct = ({data, action}) => {
 
                 <ItemCount stock={stock} />
 
-                <button onClick={action}>Agregar al carrito</button>
+                <button onClick={handleClick}>Agregar al carrito</button>
 
             </div>
         </Link>

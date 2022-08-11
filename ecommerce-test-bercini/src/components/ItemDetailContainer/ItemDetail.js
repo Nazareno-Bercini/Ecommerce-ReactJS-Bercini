@@ -8,6 +8,8 @@ const ItemDetail = ({data}) => {
 
     const {title, image, price, stock} = data
 
+
+
     return(
 
         
@@ -32,7 +34,7 @@ const ItemDetail = ({data}) => {
 
             <div className="botonProd">
                 {
-                    quantitySelected > 0 ? <Link to='/cart'><button>Finalizar compra</button></Link> : <ItemCount quantitySelected={setQuantitySelected}/>
+                    quantitySelected > 0 ? <Link to='/cart'><button>Finalizar compra</button></Link> : <ItemCount quantitySelected={setQuantitySelected} prodructData={data}/>
                 }
                 
                 
