@@ -2,6 +2,7 @@ import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+
 const ItemDetail = ({data}) => {
 
     const [quantitySelected, setQuantitySelected] = useState(0)
@@ -34,7 +35,7 @@ const ItemDetail = ({data}) => {
 
             <div className="botonProd">
                 {
-                    quantitySelected > 0 ? <Link to='/cart'><button>Finalizar compra</button></Link> : <ItemCount quantitySelected={setQuantitySelected} prodructData={data}/>
+                    quantitySelected > 0 ? <Link to='/cart'><button>Finalizar compra</button></Link> : <ItemCount quantitySelected={setQuantitySelected} stock={stock} productData={data}/>
                 }
                 
                 

@@ -11,6 +11,7 @@ const CartProvider = ({children}) => {
     }
 
     const data = {
+        addProductToCart,
         cartProducts,
         setCartProducts
         

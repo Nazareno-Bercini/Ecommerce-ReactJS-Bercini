@@ -19,10 +19,6 @@ const ItemProduct = ({data, action}) => {
                 <span>$ {price}</span>
                 <span>Disponibles: {stock}</span>
 
-                <ItemCount stock={stock} />
-
-                <button onClick={handleClick}>Agregar al carrito</button>
-
             </div>
         </Link>
     )
