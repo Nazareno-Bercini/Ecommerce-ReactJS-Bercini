@@ -1,24 +1,44 @@
 import { useContext } from "react"
 import { CartContext } from "../../context/CartContext"
+import CartList from "./CartList"
 import { Link } from "react-router-dom"
 
 const Cart = () => {
-    const {cartProducts} = useContext(CartContext)
 
-    if (cartProducts.length === 0) {
+    const { cartProducts,clear } = useContext(CartContext)
+
+
         return (
-            <>
-                <p>No has saleccionado ningun producto</p>
-                <Link to='/'>Selecciona tus productos</Link>
-            </>
-        )
-    }
+            <div className="cart-container">
 
-    return (
-        <>
-            {/* {cartProducts.map((product) => { */}
-        </>
-    )
+{
+                cartProducts.length === 0 ? <Link to='/'><h2>No has saleccionado ningun producto</h2> </Link>
+                                    :(<table>
+                                        <thead>
+                                            <tr>
+                                                <th>Producto</th>
+                                                <th>Cantidad</th>
+                                                <th>SubTotal</th>
+                                                <th onClick={()=>clear()}>Vaciar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody >
+                                            <CartList/>
+                                        </tbody>
+
+                                        <tfoot>
+                                            <tr>
+                                                <th>Total : ${cartProducts.reduce((acc,prod) => acc + (prod.price*prod.quantity), 0)} </th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>)
+            }
+
+
+            
+            </div>
+        )
+    
 }
 
 export default Cart

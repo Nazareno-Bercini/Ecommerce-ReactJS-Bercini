@@ -2,13 +2,14 @@ import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { CartContext } from '../../context/CartContext'
 
 const ItemDetail = ({data}) => {
 
     const [quantitySelected, setQuantitySelected] = useState(0)
 
-    const {title, image, price, stock} = data
 
+    const {title, image, price, stock} = data
 
 
     return(
